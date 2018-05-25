@@ -76,7 +76,17 @@
           calculationArray.push(inputArray.join(""));//stores first number to be calculated
           calculationArray.push(keyCapture);//stores operator to be used in calculation
           inputArray = []; //clears array for new number
-          
+          if(calculationArray.length>2){
+            var arrayLength = calculationArray.length;//stores length of array
+            var lastOpPos = arrayLength - 3;//gets position of the last op key press in array
+            var firstValue = arrayLength - 4;//gets position of first in calculation
+            var secondValue = arrayLength - 2;//gets position of second number in calculation
+            if(calculationArray[lastOpPos] === "/"){ //calls fucntion to do calculation
+              divide(calculationArray[firstValue],calculationArray[secondValue]);
+            }
+
+
+          }
         }
         
       }
@@ -96,7 +106,7 @@
     }
 
     function divide(a,b){
-      return a/b;
+      return console.log(a/b);
     }
   
     function multiply(a,b){
